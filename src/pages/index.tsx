@@ -1071,7 +1071,10 @@ const Home: NextPage = () => {
           ></meta>
           <meta name="description" content="LAPD Arrests 2019." />
 
-          <meta property="og:url" content="https://4118map2021-2023.vercel.app" />
+          <meta
+            property="og:url"
+            content="https://4118map2021-2023.vercel.app"
+          />
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
