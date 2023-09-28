@@ -18,126 +18,110 @@ import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
 //test
 const filterableRaces: any = {
-  "Hispanic/Latin": 7552,
-  Black: 15654,
-  White: 12495,
-  Other: 887,
-  Asian: 198,
-  "Pacific Islander": 4,
-  Unknown: 8,
-  "American Indian/Alaskan Native": 9,
+  White: 1293,
+  "Hispanic/Latino": 1079,
+  Black: 536,
+  Other: 70,
+  Asian: 22,
+  Unknown:2,
+  "American Indian/Alaskan Native": 1,
 };
 
 const filterableRacesKeys = Object.keys(filterableRaces);
 
 const filterableTimeRange: any = {
-  "12am-4am": 681,
-  "4am-8am": 9930,
-  "8am-12pm": 12624,
-  "12pm-4pm": 8241,
-  "4pm-8pm": 3931,
-  "8pm-12am": 1391,
+  "12am-4am": 17,
+  "4am-8am": 357,
+  "8am-12pm": 1593,
+  "12pm-4pm": 608,
+  "4pm-8pm": 339,
+  "8pm-12am": 89,
 };
 
 const filterableTimesKeys = Object.keys(filterableTimeRange);
 
 const filterableArrest: any = {
-  Misdemeanor: 31009,
-  Infraction: 5793,
-  Other: 5,
+  Misdemeanor: 1551,
+  Infraction: 1451,
+  Other: 1,
 };
 
 const filterableArrestKeys = Object.keys(filterableArrest);
 
 const filterableYears: any = {
-  2012: 4096,
-  2013: 5411,
-  2014: 4583,
-  2015: 4742,
-  2016: 5438,
-  2017: 5738,
-  2018: 3456,
-  2019: 887,
-  2020: 340,
   2021: 568,
   2022: 853,
-  2023: 695,
+  2023: 1582,
 };
 
 const filterableYearsKeys = Object.keys(filterableYears);
 
 const filterableDistricts: any = {
-  1: 873,
-  2: 673,
-  3: 239,
-  4: 611,
-  5: 747,
-  6: 353,
-  7: 162,
-  8: 599,
-  9: 900,
-  10: 172,
-  11: 5961,
-  12: 745,
-  13: 5206,
-  14: 18972,
-  15: 329,
+  1: 359,
+  2: 201,
+  3: 79,
+  4: 25,
+  5: 227,
+  6: 14,
+  7: 75,
+  8: 28,
+  9: 91,
+  10: 15,
+  11: 577,
+  12: 1129,
+  13: 51,
+  14: 92,
+  15: 40,
 };
 
 const filterableDistrictsKeys = Object.keys(filterableDistricts);
 
 var raceOptions = [
   {
+    code: "w",
+    title: "White",
+    count: 1293,
+    percent: "43.06%",
+  },
+  {
     code: "h",
-    title: "Hispanic/Latin",
-    count: 7552,
-    percent: "20.52%",
+    title: "Hispanic/Latino",
+    count: 1079,
+    percent: "35.93%",
   },
   {
     code: "b",
     title: "Black",
-    count: 15654,
-    percent: "42.53%",
-  },
-  {
-    code: "w",
-    title: "White",
-    count: 12495,
-    percent: "33.95%",
+    count: 536,
+    percent: "17.85%",
   },
   {
     code: "o",
     title: "Other",
-    count: 887,
-    percent: "2.41%",
+    count: 70,
+    percent: "2.33%",
   },
   {
     code: "a",
     title: "Asian",
-    count: 198,
-    percent: "0.54%",
-  },
-  {
-    code: "p",
-    title: "Pacific Islander",
-    count: 4,
-    percent: "0.01%",
+    count: 22,
+    percent: "0.73%",
   },
   {
     code: "u",
     title: "Unknown",
-    count: 8,
-    percent: "0.02%",
+    count: 2,
+    percent: "0.06%",
   },
   {
     code: "n",
     title: "American Indian/Alaskan Native",
-    count: 9,
-    percent: "0.02%",
+    count: 1,
+    percent: "0.03%",
   },
 ];
 
-const total = 36807;
+const total = 3003;
 
 const Home: NextPage = () => {
   const shouldfilteropeninit =
@@ -179,7 +163,7 @@ const Home: NextPage = () => {
   }, [arrestData]);
 
   //template name, this is used to submit to the map analytics software what the current state of the map is.
-  var mapname = "4118-Map";
+  var mapname = "41.18_Arrests_2021-2023";
 
   const setFilteredRacePre = (input: string[]) => {
     if (input.length === 0) {
@@ -297,10 +281,10 @@ const Home: NextPage = () => {
       levels = ["interpolate", ["linear"], ["zoom"], 7, 2.5, 15, 3.5];
     }
 
-    var layer = mapref.current.getLayer("4118map");
+    var layer = mapref.current.getLayer("41.18-2021-2023");
 
     if (layer) {
-      mapref.current.setPaintProperty("4118map", "heatmap-intensity", levels);
+      mapref.current.setPaintProperty("41.18-2021-2023", "heatmap-intensity", levels);
     }
   };
 
@@ -334,7 +318,7 @@ const Home: NextPage = () => {
 
     var mapparams: any = {
       container: divRef.current, // container ID
-      style: "mapbox://styles/kennethmejia/climkzw58008101r8cpo4df4r", // style URL (THIS IS STREET VIEW)
+      style: "mapbox://styles/kennethmejia/cln1vl9n1004i01pm3jni4fo4", // style URL (THIS IS STREET VIEW)
       center: [-118.41, 34], // starting position [lng, lat]
       zoom: formulaForZoom(), // starting zoom
     };
@@ -537,7 +521,7 @@ const Home: NextPage = () => {
         closeOnClick: false,
       });
 
-      map.on("mouseover", "4118map", (e: any) => {
+      map.on("mouseover", "41.18-2021-2023", (e: any) => {
         if (e.features) {
           map.getCanvas().style.cursor = "pointer";
           const closestcoords: any = computeclosestcoordsfromevent(e);
@@ -696,7 +680,7 @@ const Home: NextPage = () => {
         }
       });
 
-      map.on("mouseleave", "4118map", () => {
+      map.on("mouseleave", "41.18-2021-2023", () => {
         //check if the url query string "stopmouseleave" is true
         //if it is, then don't do anything
         //if it is not, then do the following
@@ -745,7 +729,7 @@ const Home: NextPage = () => {
         }
       });
 
-      map.on("mousedown", "4118map", (e: any) => {
+      map.on("mousedown", "41.18-2021-2023", (e: any) => {
         setArrestInfo(0);
         setInfoBoxLength(1);
         setArrestInfoOpen(true);
@@ -980,7 +964,7 @@ const Home: NextPage = () => {
         );
 
         if (doneloadingmap === true) {
-          mapref.current.setFilter("4118map", filterinput);
+          mapref.current.setFilter("41.18-2021-2023", filterinput);
         }
       }
     }
@@ -1252,11 +1236,11 @@ const Home: NextPage = () => {
                       <div className="grow font-semibold">
                         <span className="text-red-400">*</span>
                         {filterrace === "all" && filterDistrict === "all" && (
-                          <span>36,807 Total Arrests (100%)</span>
+                          <span>3,003 Total Arrests (100%)</span>
                         )}
                         {(filterrace !== "all" || filterDistrict !== "all") && (
                           <span>
-                            {filtercount.toLocaleString()} of 36,807 Total
+                            {filtercount.toLocaleString()} of 3,003 Total
                             Arrests (
                             {((filtercount / total) * 100).toFixed(2) + "%"})
                           </span>

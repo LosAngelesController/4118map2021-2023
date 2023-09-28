@@ -13,7 +13,7 @@ const navigationPayroll = [
   },
   {
     name: "Table",
-    url: "https://docs.google.com/spreadsheets/d/1p7PNhgu0kKiRdeXnOUNOfYNzLmP7D6Iq1TTspxIaF_c/edit?usp=sharing",
+    url: "https://docs.google.com/spreadsheets/d/1OmVl7y-uDIsR03kyF80ZR6VHaoc9usTo5odQQKx2b6Y/edit?usp=sharing",
     newtab: true,
   },
   {
