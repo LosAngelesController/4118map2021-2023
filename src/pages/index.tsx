@@ -23,7 +23,7 @@ const filterableRaces: any = {
   Black: 536,
   Other: 70,
   Asian: 22,
-  Unknown:2,
+  Unknown: 2,
   "American Indian/Alaskan Native": 1,
 };
 
@@ -284,7 +284,11 @@ const Home: NextPage = () => {
     var layer = mapref.current.getLayer("41.18-2021-2023");
 
     if (layer) {
-      mapref.current.setPaintProperty("41.18-2021-2023", "heatmap-intensity", levels);
+      mapref.current.setPaintProperty(
+        "41.18-2021-2023",
+        "heatmap-intensity",
+        levels
+      );
     }
   };
 
@@ -1045,7 +1049,7 @@ const Home: NextPage = () => {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
           />
-          <title>City of LA 41.18 Arrests 2013-2023 | Map</title>
+          <title>City of LA 41.18 Arrests 2021-2023 | Map</title>
           <meta property="og:type" content="website" />
           <meta name="twitter:site" content="@lacontroller" />
           <meta name="twitter:creator" content="@lacontroller" />
@@ -1053,33 +1057,33 @@ const Home: NextPage = () => {
           <meta
             name="twitter:title"
             key="twittertitle"
-            content="City of LA 41.18 Arrests 2013-2023 | Map"
+            content="City of LA 41.18 Arrests 2021-2023 | Map"
           ></meta>
           <meta
             name="twitter:description"
             key="twitterdesc"
-            content="City of LA 41.18 Arrests 2013-2023"
+            content="City of LA 41.18 Arrests 2021-2023"
           ></meta>
           <meta
             name="twitter:image"
             key="twitterimg"
-            content="https://4118-map.vercel.app/4118.png"
+            content="https://4118map2021-2023.vercel.app/4118.png"
           ></meta>
           <meta name="description" content="LAPD Arrests 2019." />
 
-          <meta property="og:url" content="https://4118-map.vercel.app" />
+          <meta property="og:url" content="https://4118map2021-2023.vercel.app" />
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="City of LA 41.18 Arrests 2013-2023 | Map"
+            content="City of LA 41.18 Arrests 2021-2023 | Map"
           />
           <meta
             property="og:description"
-            content="City of LA 41.18 Arrests 2013-2023"
+            content="City of LA 41.18 Arrests 2021-2023"
           />
           <meta
             property="og:image"
-            content="https://4118-map.vercel.app/4118.png"
+            content="https://4118map2021-2023.vercel.app/4118.png"
           />
         </Head>
 
