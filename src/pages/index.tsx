@@ -563,7 +563,7 @@ const Home: NextPage = () => {
                         }${" "}
                         ${
                           eachCase.properties?.["Arrest Date"]
-                            ? `<span class="text-sky-400">Arrest Date: ${eachCase.properties["Arrest Date"]}</span>`
+                            ? `<span class="text-sky-400">Arrest Date: ${eachCase.properties["Arrest Date"].split(" ")[0]}</span>`
                             : ""
                         }${" "}
                         ${
@@ -579,12 +579,12 @@ const Home: NextPage = () => {
                         }
                         ${
                           eachCase.properties?.["Area Name"]
-                            ? `<span class="text-teal-200">Area: ${eachCase.properties["Area Name"]}, </span>`
+                            ? `<span class="text-teal-200">Area: ${eachCase.properties["Area Name"]}</span>`
                             : ""
                         }
                         ${
                           eachCase.properties?.["Address"]
-                            ? `<span class="text-teal-400">${eachCase.properties["Address"]}</span> `
+                            ? `<span class="text-teal-400">Address: ${eachCase.properties["Address"]}</span> `
                             : ""
                         }
                         ${" "}
