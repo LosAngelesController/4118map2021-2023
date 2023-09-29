@@ -563,7 +563,9 @@ const Home: NextPage = () => {
                         }${" "}
                         ${
                           eachCase.properties?.["Arrest Date"]
-                            ? `<span class="text-sky-400">Arrest Date: ${eachCase.properties["Arrest Date"].split(" ")[0]}</span>`
+                            ? `<span class="text-sky-400">Arrest Date: ${
+                                eachCase.properties["Arrest Date"].split(" ")[0]
+                              }</span>`
                             : ""
                         }${" "}
                         ${
