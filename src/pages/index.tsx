@@ -1051,7 +1051,7 @@ const Home: NextPage = () => {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
           />
-          <title>City of LA 41.18 Arrests 2021-2023 | Map</title>
+          <title>City of LA 41.18 Arrests (1/1/21 - 9/15/23) | Map</title>
           <meta property="og:type" content="website" />
           <meta name="twitter:site" content="@lacontroller" />
           <meta name="twitter:creator" content="@lacontroller" />
@@ -1059,19 +1059,19 @@ const Home: NextPage = () => {
           <meta
             name="twitter:title"
             key="twittertitle"
-            content="City of LA 41.18 Arrests 2021-2023 | Map"
+            content="City of LA 41.18 Arrests (1/1/21 - 9/15/23) | Map"
           ></meta>
           <meta
             name="twitter:description"
             key="twitterdesc"
-            content="City of LA 41.18 Arrests 2021-2023"
+            content="City of LA 41.18 Arrests (1/1/21 - 9/15/23)"
           ></meta>
           <meta
             name="twitter:image"
             key="twitterimg"
             content="https://4118recentarrests.lacontroller.io/4118recent.png"
           ></meta>
-          <meta name="description" content="LAPD Arrests 2019." />
+          <meta name="description" content="City of LA 41.18 Arrests (1/1/21 - 9/15/23)" />
 
           <meta
             property="og:url"
@@ -1080,11 +1080,11 @@ const Home: NextPage = () => {
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="City of LA 41.18 Arrests 2021-2023 | Map"
+            content="City of LA 41.18 Arrests (1/1/21 - 9/15/23) | Map"
           />
           <meta
             property="og:description"
-            content="City of LA 41.18 Arrests 2021-2023"
+            content="City of LA 41.18 Arrests (1/1/21 - 9/15/23)"
           />
           <meta
             property="og:image"
