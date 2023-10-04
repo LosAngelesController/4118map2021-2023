@@ -15,10 +15,10 @@ const navigationPayroll = [
     name: "Table",
     url: "https://docs.google.com/spreadsheets/d/1OmVl7y-uDIsR03kyF80ZR6VHaoc9usTo5odQQKx2b6Y/edit?usp=sharing",
     newtab: true,
-  },
+  }, 
   {
     name: "Analysis",
-    url: "https://controller.lacity.gov/landings/4118",
+    url: "https://controller.lacity.gov/landings/analysis/4118recentarrests",
     newtab: true,
   },
 ];
