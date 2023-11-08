@@ -1,4 +1,25 @@
+"use client";
+import { useEffect, useState } from "react";
 import ActiveLink from "./ActiveLink";
+
+declare global {
+  interface Window {
+    google: any;
+  }
+}
+
+// Function to show Google Translate dropdown
+const showTranslateDropdown = () => {
+  if (window.google && window.google.translate) {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        layout: window.google.translate.TranslateElement.InlineLayout.COMBO,
+      },
+      "google_translate_element"
+    );
+  }
+};
 
 const navigationPayroll = [
   {
@@ -24,6 +45,22 @@ const navigationPayroll = [
 ];
 
 function Nav() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      const script = document.createElement("script");
+      script.src =
+        "https://translate.google.com/translate_a/element.js?cb=showTranslateDropdown";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, [isMounted]);
+
   const messageBox = () => {
     alert(
       "-Click & Drag to explore locations on the map, or enter a location in the Search bar.\n\n-Click on a map point to view arrest details by location.\n\n-Click Filter button to view by Race, Year, Council District, Arrest Type, and Time."
@@ -51,6 +88,13 @@ function Nav() {
         >
           Instructions
         </p>
+        <div
+          className="text-white py-2 text-sm md:text-base md:py-3 px-3 block hover:text-green-300 focus:outline-none underline"
+          onClick={showTranslateDropdown}
+        >
+          Translate
+        </div>
+        <div id="google_translate_element" className="translate-dropdown"></div>
       </nav>
     </div>
   );

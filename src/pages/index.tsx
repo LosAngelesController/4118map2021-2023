@@ -16,7 +16,7 @@ const councildistricts = require("./CouncilDistricts.json");
 const citybounds = require("./citybounds.json");
 import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
-//test
+
 const filterableRaces: any = {
   White: 1293,
   "Hispanic/Latino": 1079,
@@ -1071,7 +1071,10 @@ const Home: NextPage = () => {
             key="twitterimg"
             content="https://4118recentarrests.lacontroller.io/4118recent.png"
           ></meta>
-          <meta name="description" content="City of LA 41.18 Arrests (1/1/21 - 9/15/23)" />
+          <meta
+            name="description"
+            content="City of LA 41.18 Arrests (1/1/21 - 9/15/23)"
+          />
 
           <meta
             property="og:url"
