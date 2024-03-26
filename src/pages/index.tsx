@@ -52,7 +52,7 @@ const filterableYears: any = {
   2021: 568,
   2022: 853,
   2023: 1918,
-  2024: 209
+  2024: 209,
 };
 
 const filterableYearsKeys = Object.keys(filterableYears);

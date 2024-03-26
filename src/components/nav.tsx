@@ -36,7 +36,7 @@ const navigationPayroll = [
     name: "Table",
     url: "https://docs.google.com/spreadsheets/d/1BMnzp75G0mWpEDKGgL-jLrZzKA2q8xFRfv0UqTLU0uk/edit?usp=sharing",
     newtab: true,
-  }, 
+  },
   {
     name: "Analysis",
     url: "https://controller.lacity.gov/landings/analysis/4118recentarrests",
