@@ -18,11 +18,11 @@ import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
 
 const filterableRaces: any = {
-  White: 1293,
-  "Hispanic/Latino": 1079,
-  Black: 536,
-  Other: 70,
-  Asian: 22,
+  White: 1496,
+  "Hispanic/Latino": 1288,
+  Black: 639,
+  Other: 95,
+  Asian: 27,
   Unknown: 2,
   "American Indian/Alaskan Native": 1,
 };
@@ -30,19 +30,19 @@ const filterableRaces: any = {
 const filterableRacesKeys = Object.keys(filterableRaces);
 
 const filterableTimeRange: any = {
-  "12am-4am": 17,
-  "4am-8am": 357,
-  "8am-12pm": 1593,
-  "12pm-4pm": 608,
-  "4pm-8pm": 339,
-  "8pm-12am": 89,
+  "12am-4am": 20,
+  "4am-8am": 429,
+  "8am-12pm": 1963,
+  "12pm-4pm": 672,
+  "4pm-8pm": 360,
+  "8pm-12am": 104,
 };
 
 const filterableTimesKeys = Object.keys(filterableTimeRange);
 
 const filterableArrest: any = {
-  Misdemeanor: 1551,
-  Infraction: 1451,
+  Misdemeanor: 1693,
+  Infraction: 1854,
   Other: 1,
 };
 
@@ -51,27 +51,28 @@ const filterableArrestKeys = Object.keys(filterableArrest);
 const filterableYears: any = {
   2021: 568,
   2022: 853,
-  2023: 1582,
+  2023: 1918,
+  2024: 209
 };
 
 const filterableYearsKeys = Object.keys(filterableYears);
 
 const filterableDistricts: any = {
-  1: 359,
-  2: 201,
-  3: 79,
-  4: 25,
-  5: 227,
-  6: 14,
-  7: 75,
-  8: 28,
-  9: 91,
-  10: 15,
-  11: 577,
-  12: 1129,
-  13: 51,
-  14: 92,
-  15: 40,
+  1: 402,
+  2: 211,
+  3: 101,
+  4: 28,
+  5: 267,
+  6: 19,
+  7: 88,
+  8: 33,
+  9: 112,
+  10: 18,
+  11: 641,
+  12: 1360,
+  13: 66,
+  14: 142,
+  15: 60,
 };
 
 const filterableDistrictsKeys = Object.keys(filterableDistricts);
@@ -80,32 +81,32 @@ var raceOptions = [
   {
     code: "w",
     title: "White",
-    count: 1293,
-    percent: "43.06%",
+    count: 1496,
+    percent: "42.16%",
   },
   {
     code: "h",
     title: "Hispanic/Latino",
-    count: 1079,
-    percent: "35.93%",
+    count: 1288,
+    percent: "36.3%",
   },
   {
     code: "b",
     title: "Black",
-    count: 536,
-    percent: "17.85%",
+    count: 639,
+    percent: "18.01%",
   },
   {
     code: "o",
     title: "Other",
-    count: 70,
-    percent: "2.33%",
+    count: 95,
+    percent: "2.68%",
   },
   {
     code: "a",
     title: "Asian",
-    count: 22,
-    percent: "0.73%",
+    count: 27,
+    percent: "0.76%",
   },
   {
     code: "u",
@@ -121,7 +122,7 @@ var raceOptions = [
   },
 ];
 
-const total = 3003;
+const total = 3548;
 
 const Home: NextPage = () => {
   const shouldfilteropeninit =
@@ -163,7 +164,7 @@ const Home: NextPage = () => {
   }, [arrestData]);
 
   //template name, this is used to submit to the map analytics software what the current state of the map is.
-  var mapname = "41.18_Arrests_2021-2023";
+  var mapname = "41.18_Arrests_2021-2024";
 
   const setFilteredRacePre = (input: string[]) => {
     if (input.length === 0) {
@@ -281,11 +282,11 @@ const Home: NextPage = () => {
       levels = ["interpolate", ["linear"], ["zoom"], 7, 2.5, 15, 3.5];
     }
 
-    var layer = mapref.current.getLayer("41.18-2021-2023");
+    var layer = mapref.current.getLayer("41.18arrests2021-feb2024");
 
     if (layer) {
       mapref.current.setPaintProperty(
-        "41.18-2021-2023",
+        "41.18arrests2021-feb2024",
         "heatmap-intensity",
         levels
       );
@@ -525,7 +526,7 @@ const Home: NextPage = () => {
         closeOnClick: false,
       });
 
-      map.on("mouseover", "41.18-2021-2023", (e: any) => {
+      map.on("mouseover", "41.18arrests2021-feb2024", (e: any) => {
         if (e.features) {
           map.getCanvas().style.cursor = "pointer";
           const closestcoords: any = computeclosestcoordsfromevent(e);
@@ -686,7 +687,7 @@ const Home: NextPage = () => {
         }
       });
 
-      map.on("mouseleave", "41.18-2021-2023", () => {
+      map.on("mouseleave", "41.18arrests2021-feb2024", () => {
         //check if the url query string "stopmouseleave" is true
         //if it is, then don't do anything
         //if it is not, then do the following
@@ -735,7 +736,7 @@ const Home: NextPage = () => {
         }
       });
 
-      map.on("mousedown", "41.18-2021-2023", (e: any) => {
+      map.on("mousedown", "41.18arrests2021-feb2024", (e: any) => {
         setArrestInfo(0);
         setInfoBoxLength(1);
         setArrestInfoOpen(true);
@@ -970,7 +971,7 @@ const Home: NextPage = () => {
         );
 
         if (doneloadingmap === true) {
-          mapref.current.setFilter("41.18-2021-2023", filterinput);
+          mapref.current.setFilter("41.18arrests2021-feb2024", filterinput);
         }
       }
     }
@@ -1051,7 +1052,7 @@ const Home: NextPage = () => {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
           />
-          <title>City of LA 41.18 Arrests (1/1/21 - 9/15/23) | Map</title>
+          <title>City of LA 41.18 Arrests (1/1/21 - 2/24/23) | Map</title>
           <meta property="og:type" content="website" />
           <meta name="twitter:site" content="@lacontroller" />
           <meta name="twitter:creator" content="@lacontroller" />
@@ -1248,11 +1249,11 @@ const Home: NextPage = () => {
                       <div className="grow font-semibold">
                         <span className="text-red-400">*</span>
                         {filterrace === "all" && filterDistrict === "all" && (
-                          <span>3,003 Total Arrests (100%)</span>
+                          <span>3,548 Total Arrests (100%)</span>
                         )}
                         {(filterrace !== "all" || filterDistrict !== "all") && (
                           <span>
-                            {filtercount.toLocaleString()} of 3,003 Total
+                            {filtercount.toLocaleString()} of 3,548 Total
                             Arrests (
                             {((filtercount / total) * 100).toFixed(2) + "%"})
                           </span>
