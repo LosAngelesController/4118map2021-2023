@@ -18,9 +18,9 @@ import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
 
 const filterableRaces: any = {
-  White: 1496,
+  White: 1491,
   "Hispanic/Latino": 1288,
-  Black: 639,
+  Black: 640,
   Other: 95,
   Asian: 27,
   Unknown: 2,
@@ -32,9 +32,9 @@ const filterableRacesKeys = Object.keys(filterableRaces);
 const filterableTimeRange: any = {
   "12am-4am": 20,
   "4am-8am": 429,
-  "8am-12pm": 1963,
+  "8am-12pm": 1960,
   "12pm-4pm": 672,
-  "4pm-8pm": 360,
+  "4pm-8pm": 359,
   "8pm-12am": 104,
 };
 
@@ -49,9 +49,9 @@ const filterableArrest: any = {
 const filterableArrestKeys = Object.keys(filterableArrest);
 
 const filterableYears: any = {
-  2021: 568,
+  2021: 569,
   2022: 853,
-  2023: 1918,
+  2023: 1913,
   2024: 209,
 };
 
@@ -60,16 +60,16 @@ const filterableYearsKeys = Object.keys(filterableYears);
 const filterableDistricts: any = {
   1: 402,
   2: 211,
-  3: 101,
+  3: 100,
   4: 28,
   5: 267,
   6: 19,
   7: 88,
   8: 33,
-  9: 112,
+  9: 113,
   10: 18,
   11: 641,
-  12: 1360,
+  12: 1355,
   13: 66,
   14: 142,
   15: 60,
@@ -81,7 +81,7 @@ var raceOptions = [
   {
     code: "w",
     title: "White",
-    count: 1496,
+    count: 1491,
     percent: "42.16%",
   },
   {
@@ -93,7 +93,7 @@ var raceOptions = [
   {
     code: "b",
     title: "Black",
-    count: 639,
+    count: 640,
     percent: "18.01%",
   },
   {
@@ -122,7 +122,7 @@ var raceOptions = [
   },
 ];
 
-const total = 3548;
+const total = 3544;
 
 const Home: NextPage = () => {
   const shouldfilteropeninit =
@@ -1249,11 +1249,11 @@ const Home: NextPage = () => {
                       <div className="grow font-semibold">
                         <span className="text-red-400">*</span>
                         {filterrace === "all" && filterDistrict === "all" && (
-                          <span>3,548 Total Arrests (100%)</span>
+                          <span>3,544 Total Arrests (100%)</span>
                         )}
                         {(filterrace !== "all" || filterDistrict !== "all") && (
                           <span>
-                            {filtercount.toLocaleString()} of 3,548 Total
+                            {filtercount.toLocaleString()} of 3,544 Total
                             Arrests (
                             {((filtercount / total) * 100).toFixed(2) + "%"})
                           </span>
