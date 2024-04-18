@@ -96,7 +96,7 @@ function Nav() {
   };
 
   return (
-    <Disclosure as='nav' className='z-50 bg-[#1a1a1a] flex flex-col'>
+    <Disclosure as="nav" className="z-50 bg-[#1a1a1a] flex flex-col">
       {({ open }) => (
         <>
           <div className="z-50 flex flex-row  h-content">
@@ -117,7 +117,9 @@ function Nav() {
                   </Disclosure.Button>
                 </div>
                 <div className="grid content-center ml-2">
-                  <strong className="text-white">41.18 Arrests (1/1/21 - 2/24/24)</strong>
+                  <strong className="text-white">
+                    41.18 Arrests (1/1/21 - 2/24/24)
+                  </strong>
                 </div>
               </div>
               <div className="hidden sm:ml-4 sm:block lg:ml-6">
