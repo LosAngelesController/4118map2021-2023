@@ -163,9 +163,9 @@ const Home: NextPage = () => {
     mapboxStyle: string;
   } | null>(null);
 
-  useEffect(() => {
-    console.log("arrestData updated:", arrestData);
-  }, [arrestData]);
+  // useEffect(() => {
+  //   console.log("arrestData updated:", arrestData);
+  // }, [arrestData]);
 
   //template name, this is used to submit to the map analytics software what the current state of the map is.
   var mapname = "41.18_Arrests_2021-2024";
