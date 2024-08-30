@@ -1270,11 +1270,11 @@ const Home: NextPage = () => {
                       <div className="grow font-semibold">
                         <span className="text-red-400">*</span>
                         {filterrace === "all" && filterDistrict === "all" && (
-                          <span>3,544 Total Arrests (100%)</span>
+                          <span>3,985 Total Arrests (100%)</span>
                         )}
                         {(filterrace !== "all" || filterDistrict !== "all") && (
                           <span>
-                            {filtercount.toLocaleString()} of 3,544 Total
+                            {filtercount.toLocaleString()} of 3,985 Total
                             Arrests (
                             {((filtercount / total) * 100).toFixed(2) + "%"})
                           </span>
