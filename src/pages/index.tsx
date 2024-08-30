@@ -18,11 +18,11 @@ import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
 
 const filterableRaces: any = {
-  White: 1491,
-  "Hispanic/Latino": 1288,
-  Black: 640,
-  Other: 95,
-  Asian: 27,
+  White: 1645,
+  "Hispanic/Latino": 1431,
+  Black: 769,
+  Other: 105,
+  Asian: 32,
   Unknown: 2,
   "American Indian/Alaskan Native": 1,
 };
@@ -31,18 +31,18 @@ const filterableRacesKeys = Object.keys(filterableRaces);
 
 const filterableTimeRange: any = {
   "12am-4am": 20,
-  "4am-8am": 429,
-  "8am-12pm": 1960,
-  "12pm-4pm": 672,
-  "4pm-8pm": 359,
-  "8pm-12am": 104,
+  "4am-8am": 460,
+  "8am-12pm": 2166,
+  "12pm-4pm": 843,
+  "4pm-8pm": 382,
+  "8pm-12am": 114,
 };
 
 const filterableTimesKeys = Object.keys(filterableTimeRange);
 
 const filterableArrest: any = {
-  Misdemeanor: 1693,
-  Infraction: 1854,
+  Misdemeanor: 1778,
+  Infraction: 2206,
   Other: 1,
 };
 
@@ -52,27 +52,27 @@ const filterableYears: any = {
   2021: 569,
   2022: 853,
   2023: 1913,
-  2024: 209,
+  2024: 650,
 };
 
 const filterableYearsKeys = Object.keys(filterableYears);
 
 const filterableDistricts: any = {
-  1: 402,
-  2: 211,
-  3: 100,
-  4: 28,
-  5: 267,
-  6: 19,
-  7: 88,
-  8: 33,
-  9: 113,
-  10: 18,
-  11: 641,
-  12: 1355,
-  13: 66,
-  14: 142,
-  15: 60,
+  1: 399,
+  2: 345,
+  3: 116,
+  4: 63,
+  5: 249,
+  6: 69,
+  7: 93,
+  8: 43,
+  9: 272,
+  10: 87,
+  11: 665,
+  12: 1309,
+  13: 77,
+  14: 125,
+  15: 72,
 };
 
 const filterableDistrictsKeys = Object.keys(filterableDistricts);
@@ -81,38 +81,38 @@ var raceOptions = [
   {
     code: "w",
     title: "White",
-    count: 1491,
-    percent: "42.16%",
+    count: 1645,
+    percent: "41.28%",
   },
   {
     code: "h",
     title: "Hispanic/Latino",
-    count: 1288,
-    percent: "36.3%",
+    count: 1431,
+    percent: "35.9%",
   },
   {
     code: "b",
     title: "Black",
-    count: 640,
-    percent: "18.01%",
+    count: 769,
+    percent: "19.3%",
   },
   {
     code: "o",
     title: "Other",
-    count: 95,
-    percent: "2.68%",
+    count: 105,
+    percent: "2.63%",
   },
   {
     code: "a",
     title: "Asian",
-    count: 27,
-    percent: "0.76%",
+    count: 32,
+    percent: "0.8%",
   },
   {
     code: "u",
     title: "Unknown",
     count: 2,
-    percent: "0.06%",
+    percent: "0.05%",
   },
   {
     code: "n",
@@ -122,7 +122,7 @@ var raceOptions = [
   },
 ];
 
-const total = 3544;
+const total = 3985;
 
 const Home: NextPage = () => {
   const shouldfilteropeninit =
@@ -1089,7 +1089,7 @@ const Home: NextPage = () => {
           <meta
             name="twitter:image"
             key="twitterimg"
-            content="https://4118recentarrests.lacontroller.app/4118recent.png"
+            content="https://4118recentarrests.lacontroller.app/4118thumbnail.png"
           ></meta>
           <meta
             name="description"
@@ -1111,7 +1111,7 @@ const Home: NextPage = () => {
           />
           <meta
             property="og:image"
-            content="https://4118recentarrests.lacontroller.app/4118recent.png"
+            content="https://4118recentarrests.lacontroller.app/4118thumbnail.png"
           />
         </Head>
 
