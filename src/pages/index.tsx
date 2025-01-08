@@ -18,31 +18,32 @@ import mapboxgl from "mapbox-gl";
 import { Intensity } from "@/components/Intensity";
 
 const filterableRaces: any = {
-  White: 1645,
-  "Hispanic/Latino": 1431,
-  Black: 769,
+  White: 1759,
+  "Hispanic/Latino": 1591,
+  Black: 862,
   Other: 105,
-  Asian: 32,
-  Unknown: 2,
+  Asian: 35,
+  "Pacific Islander": 5,
+  Unknown: 3,
   "American Indian/Alaskan Native": 1,
 };
 
 const filterableRacesKeys = Object.keys(filterableRaces);
 
 const filterableTimeRange: any = {
-  "12am-4am": 20,
-  "4am-8am": 460,
-  "8am-12pm": 2166,
-  "12pm-4pm": 843,
-  "4pm-8pm": 382,
-  "8pm-12am": 114,
+  "12am-4am": 24,
+  "4am-8am": 500,
+  "8am-12pm": 2409,
+  "12pm-4pm": 911,
+  "4pm-8pm": 394,
+  "8pm-12am": 123,
 };
 
 const filterableTimesKeys = Object.keys(filterableTimeRange);
 
 const filterableArrest: any = {
-  Misdemeanor: 1778,
-  Infraction: 2206,
+  Misdemeanor: 1829,
+  Infraction: 2531,
   Other: 1,
 };
 
@@ -52,27 +53,27 @@ const filterableYears: any = {
   2021: 569,
   2022: 853,
   2023: 1913,
-  2024: 650,
+  2024: 1026,
 };
 
 const filterableYearsKeys = Object.keys(filterableYears);
 
 const filterableDistricts: any = {
-  1: 399,
-  2: 345,
-  3: 116,
-  4: 63,
-  5: 249,
-  6: 69,
-  7: 93,
-  8: 43,
-  9: 272,
-  10: 87,
-  11: 665,
-  12: 1309,
-  13: 77,
-  14: 125,
-  15: 72,
+  1: 515,
+  2: 226,
+  3: 140,
+  4: 35,
+  5: 286,
+  6: 86,
+  7: 117,
+  8: 32,
+  9: 124,
+  10: 22,
+  11: 704,
+  12: 1502,
+  13: 94,
+  14: 391,
+  15: 74,
 };
 
 const filterableDistrictsKeys = Object.keys(filterableDistricts);
@@ -81,48 +82,54 @@ var raceOptions = [
   {
     code: "w",
     title: "White",
-    count: 1645,
-    percent: "41.28%",
+    count: 1759,
+    percent: "40.33%",
   },
   {
     code: "h",
     title: "Hispanic/Latino",
-    count: 1431,
-    percent: "35.9%",
+    count: 1591,
+    percent: "36.48%",
   },
   {
     code: "b",
     title: "Black",
-    count: 769,
-    percent: "19.3%",
+    count: 862,
+    percent: "19.77%",
   },
   {
     code: "o",
     title: "Other",
     count: 105,
-    percent: "2.63%",
+    percent: "2.4%",
   },
   {
     code: "a",
     title: "Asian",
-    count: 32,
+    count: 35,
     percent: "0.8%",
+  },
+  {
+    code: "p",
+    title: "Pacific Islander",
+    count: 5,
+    percent: "0.11%",
   },
   {
     code: "u",
     title: "Unknown",
-    count: 2,
-    percent: "0.05%",
+    count: 3,
+    percent: "0.07%",
   },
   {
     code: "n",
     title: "American Indian/Alaskan Native",
     count: 1,
-    percent: "0.03%",
+    percent: "0.02%",
   },
 ];
 
-const total = 3985;
+const total = 4361;
 
 const Home: NextPage = () => {
   const shouldfilteropeninit =
@@ -286,11 +293,11 @@ const Home: NextPage = () => {
       levels = ["interpolate", ["linear"], ["zoom"], 7, 2.5, 15, 3.5];
     }
 
-    var layer = mapref.current.getLayer("41.18arrests2021-feb2024");
+    var layer = mapref.current.getLayer("41.18arrests2021-dec2024");
 
     if (layer) {
       mapref.current.setPaintProperty(
-        "41.18arrests2021-feb2024",
+        "41.18arrests2021-dec2024",
         "heatmap-intensity",
         levels
       );
@@ -544,7 +551,7 @@ const Home: NextPage = () => {
           closeOnClick: false,
         });
 
-        map.on("mouseover", "41.18arrests2021-feb2024", (e: any) => {
+        map.on("mouseover", "41.18arrests2021-dec2024", (e: any) => {
           if (e.features) {
             map.getCanvas().style.cursor = "pointer";
             const closestcoords: any = computeclosestcoordsfromevent(e);
@@ -705,7 +712,7 @@ const Home: NextPage = () => {
           }
         });
 
-        map.on("mouseleave", "41.18arrests2021-feb2024", () => {
+        map.on("mouseleave", "41.18arrests2021-dec2024", () => {
           //check if the url query string "stopmouseleave" is true
           //if it is, then don't do anything
           //if it is not, then do the following
@@ -754,7 +761,7 @@ const Home: NextPage = () => {
           }
         });
 
-        map.on("mousedown", "41.18arrests2021-feb2024", (e: any) => {
+        map.on("mousedown", "41.18arrests2021-dec2024", (e: any) => {
           setArrestInfo(0);
           setInfoBoxLength(1);
           setArrestInfoOpen(true);
@@ -990,7 +997,7 @@ const Home: NextPage = () => {
         );
 
         if (doneloadingmap === true) {
-          mapref.current.setFilter("41.18arrests2021-feb2024", filterinput);
+          mapref.current.setFilter("41.18arrests2021-dec2024", filterinput);
         }
       }
     }
@@ -1071,7 +1078,7 @@ const Home: NextPage = () => {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
           />
-          <title>City of LA 41.18 Arrests (1/1/21 - 8/23/2024) | Map</title>
+          <title>City of LA 41.18 Arrests (1/1/21 - 12/13/2024) | Map</title>
           <meta property="og:type" content="website" />
           <meta name="twitter:site" content="@lacontroller" />
           <meta name="twitter:creator" content="@lacontroller" />
@@ -1079,12 +1086,12 @@ const Home: NextPage = () => {
           <meta
             name="twitter:title"
             key="twittertitle"
-            content="City of LA 41.18 Arrests (1/1/21 - 8/23/2024) | Map"
+            content="City of LA 41.18 Arrests (1/1/21 - 12/13/2024) | Map"
           ></meta>
           <meta
             name="twitter:description"
             key="twitterdesc"
-            content="City of LA 41.18 Arrests (1/1/21 - 8/23/2024)"
+            content="City of LA 41.18 Arrests (1/1/21 - 12/13/2024)"
           ></meta>
           <meta
             name="twitter:image"
@@ -1093,7 +1100,7 @@ const Home: NextPage = () => {
           ></meta>
           <meta
             name="description"
-            content="City of LA 41.18 Arrests (1/1/21 - 8/23/2024)"
+            content="City of LA 41.18 Arrests (1/1/21 - 12/13/2024)"
           />
 
           <meta
@@ -1103,11 +1110,11 @@ const Home: NextPage = () => {
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="City of LA 41.18 Arrests (1/1/21 - 8/23/2024) | Map"
+            content="City of LA 41.18 Arrests (1/1/21 - 12/13/2024) | Map"
           />
           <meta
             property="og:description"
-            content="City of LA 41.18 Arrests (1/1/21 - 8/23/2024)"
+            content="City of LA 41.18 Arrests (1/1/21 - 12/13/2024)"
           />
           <meta
             property="og:image"
@@ -1270,11 +1277,11 @@ const Home: NextPage = () => {
                       <div className="grow font-semibold">
                         <span className="text-red-400">*</span>
                         {filterrace === "all" && filterDistrict === "all" && (
-                          <span>3,985 Total Arrests (100%)</span>
+                          <span>4,361 Total Arrests (100%)</span>
                         )}
                         {(filterrace !== "all" || filterDistrict !== "all") && (
                           <span>
-                            {filtercount.toLocaleString()} of 3,985 Total
+                            {filtercount.toLocaleString()} of 4,361 Total
                             Arrests (
                             {((filtercount / total) * 100).toFixed(2) + "%"})
                           </span>
