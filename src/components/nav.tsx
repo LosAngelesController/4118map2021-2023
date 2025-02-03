@@ -118,7 +118,7 @@ function Nav() {
                 </div>
                 <div className="grid content-center ml-2">
                   <strong className="text-white">
-                    41.18 Arrests (1/1/21 - 12/13/24)
+                    41.18 Arrests (1/1/21 - 12/31/24)
                   </strong>
                 </div>
               </div>

@@ -9,7 +9,7 @@ export function MapTitle() {
         color: "#ffffff",
       }}
     >
-      <strong className="">41.18 Arrests (1/1/21 - 12/13/24)</strong>
+      <strong className="">41.18 Arrests (1/1/21 - 12/31/24)</strong>
     </div>
   );
 }
